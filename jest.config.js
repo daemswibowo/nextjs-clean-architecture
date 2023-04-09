@@ -12,7 +12,8 @@ const config = {
         "./jest.setup.js"
     ],
     verbose: true,
-    testMatch: ["**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"]
+    testMatch: ["**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)", "**/?(*.)+(spec|test).[jt]s?(x)"],
+    testEnvironment: 'jsdom',
 }
 
 module.exports = createJestConfig(config);

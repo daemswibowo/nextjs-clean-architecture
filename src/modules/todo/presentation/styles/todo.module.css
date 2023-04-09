@@ -1,0 +1,33 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 100vh;
+}
+
+.listSection {
+    width: 100%;
+    max-width: 512px;
+}
+
+.listContainer {
+
+}
+
+.listItem {
+    background: #0a0a0a;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.listItem label {
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.listItem:hover {
+    background: #1a1a1a;
+}
