@@ -1,11 +1,14 @@
 import TodoLayout from "@/modules/todo/presentation/layout";
 import styles from './styles/todo.module.css';
-import OrganismTodoListSection from "@/modules/todo/presentation/components/organisms/todoListSection";
+import OrganismTodosListSection from "@/modules/todo/presentation/components/organisms/todosListSection";
+import TodoProvider from "@/modules/todo/presentation/providers/todo.provider";
 
 export default function TodoPage() {
-    return <TodoLayout>
-        <main className={styles.main}>
-            <OrganismTodoListSection />
-        </main>
-    </TodoLayout>
+    return <TodoProvider>
+        <TodoLayout>
+            <main className={styles.main}>
+                <OrganismTodosListSection />
+            </main>
+        </TodoLayout>
+    </TodoProvider>
 }

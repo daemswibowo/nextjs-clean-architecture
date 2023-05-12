@@ -1,12 +1,12 @@
-import {autoInjectable} from "tsyringe";
-import {TodoRepository} from "@/modules/todo/data/todo.repository";
+import {autoInjectable, delay, inject} from "tsyringe";
+import {TodoRepository, TodoRepositoryImpl} from "@/modules/todo/data/todo.repository";
 import {BaseResponse} from "@/modules/core/common/baseResponse";
 import Todo from "@/modules/todo/domain/entities/todo";
 import di from "@/common/di";
 
 @autoInjectable()
-export default class GetTodosList {
-    constructor(private repo: TodoRepository) {
+export class GetTodosList {
+    constructor(@inject(delay(() => TodoRepositoryImpl)) private repo: TodoRepository) {
     }
 
     /**

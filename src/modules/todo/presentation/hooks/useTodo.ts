@@ -1,16 +1,6 @@
-import {useTodoContext} from "@/modules/todo/presentation/todo.context";
-import {useReducer} from "react";
+import {useContext} from "react";
+import TodoContext from "@/modules/todo/presentation/providers/todo.context";
 
-export default function useTodo() {
-    const result = useTodoContext();
-    const [state, dispatch] = useReducer<{}>()
+const useTodo = () => useContext(TodoContext);
 
-    const fetchTodos = async () => {
-
-    }
-
-    return {
-        ...result,
-        fetchTodos,
-    }
-}
+export default useTodo;

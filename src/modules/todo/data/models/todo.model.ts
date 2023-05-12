@@ -4,7 +4,8 @@ export default class TodoModel {
     constructor(
         public id: number,
         public userId: number,
-        public completed: boolean
+        public completed: boolean,
+        public title: string,
     ) {
     }
 
@@ -16,6 +17,7 @@ export default class TodoModel {
             id: this.id,
             userId: this.userId,
             completed: this.completed,
+            title: this.title,
         }
     }
 
@@ -24,6 +26,6 @@ export default class TodoModel {
      * @param obj
      */
     static fromObject(obj: any): TodoModel {
-        return new TodoModel(obj['id'], obj['userId'], obj['completed']);
+        return new TodoModel(obj['id'], obj['userId'], obj['completed'], obj['title']);
     }
 }

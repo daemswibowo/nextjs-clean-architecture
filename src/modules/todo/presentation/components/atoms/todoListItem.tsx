@@ -9,8 +9,8 @@ export default function AtomTodoListItem (props: TodoListItemProps) {
 
     return <div className={styles.listItem}>
         <label>
-            <span>todo item 1</span>
-            <input name={'completed'} checked={true} type="checkbox" />
+            <span>{todo?.title}</span>
+            <input name={'completed'} checked={todo?.completed} onChange={() => null} type="checkbox" />
         </label>
     </div>
 }

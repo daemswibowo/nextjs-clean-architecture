@@ -2,6 +2,7 @@ import axios, {AxiosError, AxiosInstance, AxiosRequestConfig, isAxiosError} from
 import {BaseResponse} from "@/modules/core/common/baseResponse";
 import {Failure, HTTPErrorCode} from "@/modules/core/common/failure";
 import lodash from "@/modules/core/utils/lodash";
+import {singleton} from "tsyringe";
 
 const HTTP_ERR_MSG = {
     400: 'Server tidak dapat memproses permintaan Anda',
@@ -23,10 +24,12 @@ export const HTTP_ERR_CODE = {
     DEFAULT: HTTPErrorCode.SERVER_ERROR,
 };
 
+@singleton()
 export default class HttpClient {
+    private name: string = 'hello world';
     client: AxiosInstance;
     serverTimeout: number = 60 * 2 * 1000; // 2 min
-    constructor(public name: string) {
+    constructor() {
         const requestHeader: any = {
             'Content-Type': 'application/json',
             Accept: 'application/json',
